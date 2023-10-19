@@ -1,0 +1,143 @@
+<%  include ../views/menubar%>
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <link rel="stylesheet" href="../uploads/user.jpg">
+    
+</head>
+<body>
+
+    <div id="main">
+        
+        <div id="posts-column">
+
+            <div id="createpost">
+                <h3 style="color: rgb(255, 255, 255);">Post Something</h3>
+                <form action="/createpost">
+                    <button style="background-color: #05121B; color: white;">What's on your mind?</button>
+                </form>
+            </div>
+
+            <% if(data.length > 0){ %>
+                <div id="posts">
+                    <% data.forEach(function(elem){ %>
+                    <div id="dp-name-loc">
+                        <div id="dp-name">
+                            <% elem.author.forEach(function(dets){ %>
+                                <img src="<%= dets.profilepic %>" alt="">
+                                <% }) %>
+                            <h2> <%= elem.user %></h2>
+                        </div>
+                    <!-- <hr>     -->
+                        <h4><%= elem.location %></h4>
+                    </div>
+                    
+
+                    <div id="postimg">
+                        <img src="<%= elem.imageurl%>" alt="">
+                    </div>
+
+                    <div id="postreact">
+                        <div id="postlikes">
+                            <div id="bar">
+                                <button><a href="/likes/<%= elem._id %>"><i class="ri-heart-line"></i></a></button>
+                                <button><i class="ri-chat-3-line" ></i></button>
+                            </div>
+                            <div id="likedby">
+                               <h3>Liked by <%= elem.likes.length %> others</h3>
+                            </div>
+                            
+                       </div> 
+
+                       <div id="postcap">
+                           <h4><%= elem.user %> : </h4><p style="padding-left: 10px;"><%= elem.caption %></p>
+                       </div>
+
+
+                       <div id="postcmnts">
+                        <form action="/comment/<%= elem._id %>" method="post">
+                            <input id="input" name="comment" type="text" placeholder="Write Comment.....">
+                            <button>POST</button>
+                        </form>
+
+
+                        <h2>View  Comments</h2><div id="cmnts">
+                            <% elem.comment.forEach(function(lolo){ %>
+                                    <div id="box">
+                                        <div id="box1">
+                                            <h3><%= lolo.cmtuser %>:</h3>
+                                        </div>
+                                        <div id="box2">
+                                           <h4><%= lolo.comment %></h4> 
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                                </div>
+                    </div>
+   
+                       
+   
+                    </div>
+                    
+<hr>
+
+                    <% }) %> 
+                </div>
+            <% }else{ %>
+                <h1 id="nopost">No post created</h1>
+            <% } %>
+        </div>
+        
+        <div id="friendsbar">
+            <h3>Friends</h3>
+            <div id="frndlist">
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Edward Cisneros</h4>
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                    <h4>Ashley Cole</h4>
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Luis Villasmil</h4>
+
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1521252659862-eec69941b071?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Zoe Fernandez</h4>
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Leio McLaren</h4>
+
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1521856729154-7118f7181af9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Ana Itonishvili</h4>
+
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Aatik Tasneem</h4>
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGluc3RhZ3JhbSUyMHByb2ZpbGUlMjBwaWN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Ryan Carlos</h4>
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGluc3RhZ3JhbSUyMHByb2ZpbGUlMjBwaWN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Andrew Tovar</h4>
+                </div>
+                <div class="frnd">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAzfHxpbnN0YWdyYW0lMjBwcm9maWxlJTIwcGljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    <h4>Steph Sinson</h4>
+                </div>
+                
+
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

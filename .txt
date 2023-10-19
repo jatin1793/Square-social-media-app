@@ -1,0 +1,26 @@
+#friendscnt>input{
+  padding: 3vh;
+  border: none;
+  width: 6vh;
+  background-color: transparent;
+  color: darkgrey;
+  outline: none;
+  pointer-events: none;
+  font-size: 4vh;
+  margin-left: 1.5vw;
+}
+
+#friendscnt{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 10vw;
+  margin-top: 10vh; 
+  margin-left: 10vw;
+}
+
+#friendscnt>h3{
+  color: white;
+  font-size: 5vh;
+}
+

@@ -1,0 +1,56 @@
+<%  include ../views/menubar%>
+<link rel="stylesheet" href="../stylesheets/addfriends.css">
+
+</head>
+<body>
+ 
+  <div id="main">
+    <img src="../images/addfriends.png">
+  
+  <button>See more friends  <i class="ri-add-line"></i></button>
+    <div id="cards"></div>
+    <div id="friendscnt">
+      <h3>Friends</h3><input type="text" id="inc"></input>
+    </div>
+  </div>
+ 
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.3/axios.min.js" integrity="sha512-wS6VWtjvRcylhyoArkahZUkzZFeKB7ch/MHukprGSh1XIidNvHG1rxPhyFnL73M0FC1YXPIXLRDAoOyRJNni/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    function randomusergenerator(){
+      var clutter = "";
+    document.querySelector("button")
+    .addEventListener("click", function(){
+      axios.get("https://randomuser.me/api/")
+      .then(function(resp){
+        clutter += `<div id="card">
+        <div id="picture">
+          <img src="${resp.data.results[0].picture.large}">
+        </div>
+        <h3>${resp.data.results[0].name.first + " " +resp.data.results[0].name.last}</h3>
+        <h5>${resp.data.results[0].login.username}</h6>
+        <input type="button" onclick="buttonClick();this.value= 'Following'" value="Follow" id="myButton1">
+      </div> `
+
+      document.querySelector("#cards").innerHTML = clutter;
+      })
+    })
+    }
+    
+
+    randomusergenerator();
+      
+    var i = 0;
+    function buttonClick() {
+        i++;
+        document.getElementById('inc').value = i;
+    }
+    
+
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<%  include ../views/menubar%>
+
+    <link rel="stylesheet" href="../stylesheets/myaccount.css">
+    
+</head>
+<body>
+    
+  <form action="/upload" enctype="multipart/form-data" method="post"> 
+    <div id="main">
+      <div id="upperimg">
+        <img src="https://blog.hubspot.com/hubfs/design-1.jpg" alt="">
+      </div>
+        <div id="dp">
+          <img src="">
+        
+        <div id="edit">
+          <div id="update">
+            <h3>Update your photo</h3>
+            <input id="file" type="file" name="image" style="font-family: gilroy light; color: white;">
+            <input type="submit" style="width: 50%;padding: 1vh 0vh;">
+          </div>
+        </div>
+      </div>
+  </form>
+
+      <div id="details">
+        <h2 style="color: white;">Update details</h2>
+        <form action="" method="post">
+          <h3>Enter Username: <input type="text" name="name" placeholder="username" style="margin-left: 7vw;"></h3>
+          <h3>Enter Email: <input type="text" name="email" placeholder="email" style="margin-left: 10.25vw;"></h3>
+          <div id="saveanddelete" style="display: flex;gap: 60vw;">
+            <input type="submit" value="SAVE">
+        </form>
+
+        <form action="/delete" method="post">
+            <div id="delete">
+            <a href="/delete"><button>DELETE ACCOUNT</button></a>
+        </form>    
+          </div>
+          </div>
+          
+      </div>
+
+ 
+    </div>
+ 
+</body>
+</html>

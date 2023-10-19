@@ -1,0 +1,64 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  text-align: center;
+  background: #EBF0F5; 
+  height: 100%;
+  width:100%;
+  box-sizing: border-box;
+  font-family: gilroy light;
+}
+
+#main{
+  width: 88vw;
+  height: 100vh;
+  position: absolute;
+  margin-left: 6vw;
+  background-color: #05121B;
+}
+
+h1 {
+    color: #88B04B;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+p {
+    color:#1a50be ;
+    font-size:20px;
+    margin: 0;
+}
+
+.checkmark {
+  color: #9ABC66;
+  font-size: 100px;
+  line-height: 200px;
+  margin-left:-15px;
+}
+
+.card {
+  margin-top: 10vh;
+  background: #6BABF5;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #C8D0D8;
+  display: inline-block;
+}
+
+button{
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  background:linear-gradient(180deg,#91aeca,#1a50be);
+  color: white;
+  font-family: gilroy light;
+  border: none;
+}
+
+button:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html ,body{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: gilroy light;
+}
+
+main {
+    background-color: #05121B;
+    text-align: center; 
+    width: 88vw;
+    height: 100vh;
+    position: absolute;
+    margin-left: 6vw;
+}
+
+h1 {
+  margin-top: 8vh;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1vh;
+  font-size: 7vh
+}
+
+.pricing-container {
+  display: flex;
+  gap: 5vw;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 8vh;
+}
+
+.pricing {
+  display: grid;
+  align-items: center;
+  border-radius: 10px;
+  padding: 2vh;
+}
+
+.container-2 {
+  background:linear-gradient(180deg,#91aeca,#1a50be);
+  color: white;
+}
+
+.container-1,
+.container-3 {
+  color: white;
+  background:linear-gradient(180deg,#91aeca,#1a50be);
+  margin-top: 7vh;
+}
+
+.pricing h2 {
+  font-size: 3vh;
+  font-weight: 700;
+}
+
+.container-2 h2 {
+  padding-top: 12px;
+}
+
+.pricing p {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 10vh;
+}
+
+.dollar-sign {
+  font-size: 10vh;
+}
+
+hr {
+  width: 80%;
+  margin: 0 auto;
+  opacity: 0.5;
+  border: 0.5px solid #0000009a;
+}
+
+.pricing ul {
+  list-style: none;
+}
+
+.pricing ul li {
+  padding: 2vh;
+}
+
+.container-2 ul li {
+  padding: 2vh;
+}
+
+.pricing button {
+  cursor: pointer;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2vh;
+  border-radius: 10px;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2vh;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  word-spacing: 3px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container-2 button {
+  color: white;
+  background-color:#0000009a;
+}
+
+.container-1 button,
+.container-3 button {
+  color: white;
+  background-color:#0000009a;
+}
+

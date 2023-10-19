@@ -1,0 +1,163 @@
+<%  include ../views/menubar%>
+
+    <title>Buy Premium</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/premium.css">
+
+
+</head>
+
+
+
+<body>
+
+    <main>
+
+        <h1>OUR PRICING</h1>
+        <section class="pricing-container">
+
+          <article class="pricing container-1">
+            <h2>Basic Monthly Premium</h2>
+            <p class="price-1"> <span class="dollar-sign">&dollar;</span>1.49</p>
+            <ul>
+             <hr style="border:0.5px solid #0000009a;">
+              <li> Exclusive stickers</li>
+                <hr style="border:0.5px solid #0000009a;">
+              <li> Ad-free browsing</li>
+     <hr style="border:0.5px solid #0000009a;">
+              <li> SMS two-factor authentication</li>
+     <hr style="border:0.5px solid #0000009a;">
+            </ul>
+            <button>Buy Now</button>
+          </article>
+
+          <article class="pricing container-2">
+            <h2>Annual Premium</h2>
+            <p class="price-2"> <span class="dollar-sign">&dollar;</span>9.99</p>
+            <ul>
+           <hr>
+              <li> Blue verification mark</li>
+      <hr >
+              <li> Exclusive stickers</li>
+       <hr>
+              <li> 60-minute video uploads</li>
+     <hr>
+              <li> Ad-free browsing</li>
+     <hr>
+              <li> SMS two-factor authentication</li>
+     <hr>         
+            </ul>
+            <button id="rzp-button1">Buy Now</button>
+          </article>
+
+          <article class="pricing container-3">
+            <h2>Master Annual Premium</h2>
+            <p class="price-3"><span class="dollar-sign">&dollar;</span>14.99</p>
+            <ul>
+      <hr>
+              <li>SMS two-factor authentication </li>
+           <hr>
+              <li>Exclusive stickers</li>
+            <hr>
+              <li>Ad-free browsing </li> 
+     <hr>
+            </ul>
+            <button>Buy Now</button>
+          </article>
+
+        </section>
+    </main>
+
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+      <script>
+        function razorpaypayment(){
+          var orderId ;
+        $(document).ready(function(){
+          var settings = {
+            "url": "/create/orderId",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+              "amount": "50000"
+            }),
+          };
+    
+        //creates new orderId everytime
+        $.ajax(settings).done(function (response) {
+    
+          var options = {
+            "key": "rzp_test_r6EJwrxJbscSV9", // Enter the Key ID generated from the Dashboard
+            "amount": response.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Squarre",
+            "image": "https://i.postimg.cc/cLjkgZZM/LOGO.png",
+            "order_id": response.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response){
+                // alert(response.razorpay_payment_id + response.razorpay_order_id + response.razorpay_signature );
+                
+                // alert(response.razorpay_order_id);
+                // alert(response.razorpay_signature)
+                var settings = {
+                "url": "/api/payment/verify",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({response}),
+                }
+    
+                $.ajax(settings).done(function(response){      //calling method
+                  if(response.signatureIsValid == 'true'){
+                    window.location.href = '/success'
+                  }
+                  else{
+                    alert("Sorry payment failed !!")
+                  }
+                }) 
+    
+              },
+            // "prefill": {
+            //     "name": "Gaurav Kumar",
+            //     "email": "gaurav.kumar@example.com",
+            //     "contact": "9000090000"
+            // },
+            "notes": {
+              "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+              "color": "#3399cc"
+            }
+            
+          };
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response){
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+        });
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+        
+        orderId=response.Id;
+        console.log(orderId);
+        $("button").show();
+      });
+      });
+        }
+        razorpaypayment();
+      </script>
+    
+</body>
+</html>

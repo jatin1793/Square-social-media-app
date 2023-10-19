@@ -1,0 +1,138 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: gilroy light;
+}
+
+#main{
+  height: 100vh;
+  width: 88vw;
+  position: absolute;
+  margin-left: 6vw;
+  overflow: hidden;
+  background-color: #05121B;
+
+}
+
+#main>button{
+  position: absolute;
+  padding: 16px 32px;
+  font-family: gilroy ;
+  font-weight: 900;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 12px;
+  border: none;
+  margin: auto;
+  margin-top: 88vh;
+  left: 50%;
+  transform: translate(-50%,0%);
+  cursor: pointer;
+  background:linear-gradient(180deg,#91aeca,#1a50be);
+  color: white;
+}
+
+#cards{
+  width:80vw;
+  margin: auto;
+  display: flex;
+  margin-top: 35vh;
+  margin-left: 2.5vw;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+#card{
+  height: 20vw;
+  width: 15vw;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background:linear-gradient(180deg,#91aeca,#1a50be);
+  color: white;
+  padding: 1vh;
+}
+
+
+#picture img{
+  border-radius: 50%;
+  margin-left: 50%;
+  margin-top: 10%;
+  transform: translate(-50%);
+  height: 18vh;
+  width: 18vh;
+  border: 4px solid rgb(81, 81, 184);
+  
+}
+
+
+
+#card h3{
+  text-align: center;
+  font-family: gilroy;
+  margin-top: 1vh;
+  
+}
+
+#card h5{
+  text-align: center;
+  margin-top: 1vh;
+}
+
+#main>img{
+  top: 20%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  height: 40vh;
+  width: 50vh;
+}
+
+#card>input{
+  padding: 1vh 2vh;
+  margin-left: 50%;
+  transform: translate(-50%);
+  margin-top: 3vh;
+  border-radius: 10px;
+  border: none;
+  font-family: gilroy light;
+}
+
+
+#friendscnt>input{
+  padding: 3vh;
+  border: none;
+  width: 6vh;
+  background-color: transparent;
+  color: darkgrey;
+  outline: none;
+  pointer-events: none;
+  font-size: 4vh;
+  margin-left: 1.5vw;
+}
+
+#friendscnt{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 10vw;
+  margin-top: 10vh; 
+  margin-left: 10vw;
+}
+
+#friendscnt>h3{
+  color: white;
+  font-size: 5vh;
+}

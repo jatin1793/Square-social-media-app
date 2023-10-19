@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+<style>
+*{
+    margin:0;
+    padding: 0;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: gilroy light;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#full{
+    display: flex;
+}
+
+#lpanel{
+    display: flex;
+    flex-direction: column;
+    width: 6vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    background-color: #1B2730;
+    color: white;
+
+}
+
+#lpanel a{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+#lpanel a:hover{
+    color: white;
+    opacity: 1;
+}
+.icon{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.icon i{
+    opacity: 1;
+    /* color: black; */
+    color: white;
+    cursor: pointer;
+
+}
+
+.icon h3{
+    font-size: 15px;
+    opacity: 1;
+    color: grey;
+    text-align: center;
+}
+
+.icon i:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.icon h3:hover{
+    opacity: 1;
+    cursor: pointer;
+    color: white;
+} 
+
+#first i{
+    opacity: 1;
+    color: white;
+}
+
+#first h3:hover{
+    cursor: pointer;
+    color: white;
+}
+
+#rpanel{
+    display: flex;
+    flex-direction: column;
+    width: 6vw;
+    height: 100vh;
+    position: fixed;
+    margin-left: 94vw;
+    overflow: hidden;
+    /* border-right:2px solid rgb(0, 0, 0); */
+    background-color: #1B2730;
+} 
+
+#rpanel img{
+    height: 8vh;
+    background-size: cover;
+    margin-bottom: 1.5vh;
+}
+
+#rpanel img:hover{
+    cursor: pointer;
+}
+
+#rpanel a{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+#page{
+    width: 88vw;
+    background-color: #05121B;
+}
+
+</style>
+
+<div id="full">
+    <div id="lpanel">
+        <div class="icon">
+           <a href="/profile"><i class="ri-home-fill"></i><h3>Profile</h3></a>
+        </div>
+        
+        <div class="icon">
+            <a href="/buypremium"><i class="ri-money-dollar-circle-fill"></i><h3 >Buy Premium</h3></a>
+        </div>
+
+        <div class="icon">
+            <a href="/createpost"><i class="ri-add-box-fill"></i><h3>Create Post</h3></a>
+        </div>
+
+        <div class="icon">
+            <a href="/addfriends"><i class="ri-user-add-line"></i><h3>Add Friends</h3></a>
+        </div>
+
+    </div>
+    
+   <div id="page"></div>
+
+   <div id="rpanel">
+
+    <div class="icon">
+        <img src="">
+
+    </div>
+
+    <div class="icon">
+        <a href="/myaccount"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3_4amFDnmEEiw3Va_cALXMAz3Cua2i4qHyke4W8HHZA&usqp=CAU&ec=48665701" style="border-radius: 50%;width: 8vh;"> <h3>My Account</h3></a>
+    </div>
+
+    <div class="icon">
+        <a href="/chats" ><i class="ri-message-3-fill"></i><h3>Message</h3></a>
+    </div>
+
+    <div class="icon">
+        <a href="/logout"><i class="ri-logout-box-line"></i><h3>Log Out</h3></a>
+   </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%  include ../views/menubar%>
+
+    <title>Create Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/createpost.css">
+</head>
+<body>
+    <div id="main">
+        <div id="card">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/new-post-promotion-6366428-5272636.png" alt="">
+            <h3>Create a new post</h3>
+            <form id="form" action="/createpost" method="post">
+                <input class="input" type="text" name="caption" placeholder="Enter caption"><br>
+                <input class="input" type="text" name="location" placeholder="Enter location"><br>
+                <input class="input" required type="text" name="imageurl" placeholder="Enter imageUrl"><br>
+                <input id="submit" style="background-color: #0F234C; color: white; ;" type="submit" value="POST">
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
