@@ -1,21 +1,55 @@
-<%  include ../views/menubar%>
+<% include ../views/menubar%>
 
     <title>Create Post</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../stylesheets/createpost.css">
-</head>
-<body>
-    <div id="main">
-        <div id="card">
-            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/new-post-promotion-6366428-5272636.png" alt="">
-            <h3>Create a new post</h3>
-            <form id="form" action="/createpost" method="post">
-                <input class="input" type="text" name="caption" placeholder="Enter caption"><br>
-                <input class="input" type="text" name="location" placeholder="Enter location"><br>
-                <input class="input" required type="text" name="imageurl" placeholder="Enter imageUrl"><br>
-                <input id="submit" style="background-color: #0F234C; color: white; ;" type="submit" value="POST">
-            </form>
+    <link rel="stylesheet" href="../stylesheets/tailwind.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+
+
+    </head>
+
+    <body>
+        <div id="main">
+
+            <section>
+                <div class="px-6 ml-6 max-w-2xl">
+                    <h1 class="mb-6 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl">Add a new post</h1>
+                    <form action="/createpost" method="post">
+                        <div class="flex flex-col gap-6">
+                            <div class="sm:col-span-2">
+                                <label for="name"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Caption</label>
+                                <input type="text" name="caption"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type caption" required="">
+                            </div>
+
+                            <div class="w-full">
+                                <label for="brand"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
+                                <input type="text" name="location"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Location" required="">
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="description"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image
+                                    url</label>
+                                <textarea name="imageurl"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Your image url here"></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" value="POST"
+                            class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 cursor-pointer"></input>
+                    </form>
+                </div>
+            </section>
         </div>
-    </div> 
-</body>
-</html>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+
+    </body>
+
+    </html>

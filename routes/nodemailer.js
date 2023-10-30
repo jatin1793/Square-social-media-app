@@ -1,9 +1,9 @@
 const nodemailer = require("nodemailer");
 const {google} = require("googleapis");
 
-const CLIENT_ID = `651673037882-cpl0msdi3ondvkjqect99gr5joe0hjbs.apps.googleusercontent.com`;
-const CLIENT_SECRET = `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`;
-const REFRESH_TOKEN = `1//04gSEXy1RFXGHCgYIARAAGAQSNwF-L9Ir18zMcH0QWHIgqERglbqJDyImvLYcEmlj9TZX21mzTTikwm4Fv2iYFRSK0IZgWhgEr_M`;
+const CLIENT_ID = `975389664778-k4gnrr29b04jnv0oodubnn4qi1idqsm7.apps.googleusercontent.com`;
+const CLIENT_SECRET = `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`;
+const REFRESH_TOKEN = `1//040S3qCr39j04CgYIARAAGAQSNwF-L9IrTIYWtl8F-QC7i5MwzhPjIRlIaRIczxgY9B9LNIrkfhwdLwe504OKv6w48J1bAMzktb8`;
 const REDIRECT_URI = `https://developers.google.com/oauthplayground/`;
 
 const oauthclient = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
@@ -16,7 +16,7 @@ async function sendMail(receiver, text){
       service: 'gmail',
       auth: {
         type: "OAuth2",
-        user:"sarthakwakodikar4@gmail.com",
+        user:"jatinwakodikar@gmail.com",
         clientId: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
@@ -25,7 +25,7 @@ async function sendMail(receiver, text){
     })
 
     const mailOpts = {
-      from: "sarthakwakodikar4@gmail.com",
+      from: "jatinwakodikar@gmail.com",
       to: receiver,
       subject: "Test test",
       text: "That was Easy",

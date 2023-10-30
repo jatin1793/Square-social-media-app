@@ -10,25 +10,22 @@ html, body{
 }
 
 #main{
-    width: 88vw;
+    width: 80vw;
     height: 100vh;
     position: absolute;
-    margin-left: 6vw;
-  background-color: #05121B;
+    margin-left: 20vw;
+  background-color: #e8edf4;
+  padding-top: 5vh;
+  padding-left: 10vh;
 
 }
 
 #card{
-    top: 50%;
-    left:50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
     padding: 4vw;
     border:none;
-    color: grey;
-    background:linear-gradient(180deg,#91aeca,#1a50be);
-    color: white;
+    background-color: white;
     border-radius: 15px;  
+    width: 30vw;
 }
 
 h3{
@@ -38,10 +35,11 @@ h3{
 
 input{
     padding: 2vh 0px 2vh 2vh;
-    background-color: #FEF9F3;
+    background-color: #e8edf4;
     font-family: gilroy ;
     border: none;
     border-radius: 15px;
+    outline: none;
 }
 
 form{
@@ -49,7 +47,7 @@ form{
     flex-direction: column;
 }
 
-img{
+#card img{
     width: 300px;
     height: 200px;
 }

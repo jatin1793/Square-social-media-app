@@ -3,19 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,
-body{
+
+html, body{
     width: 100%;
     height: 100%;
     font-family: gilroy light;
 }
+
 #main{
     background-color: #05121B;
     text-align: center; 
-    width: 88vw;
+    width: 80vw;
     height: 100vh;
     position: absolute;
-    margin-left: 6vw;
+    margin-left: 20vw;
 }
    
 #container{
@@ -28,7 +29,6 @@ body{
       background:linear-gradient(180deg,#91aeca,#1a50be);
       padding: 4vh;
       border-radius: 10px;
-
 }
 
 #container>h3{

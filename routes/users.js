@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const plm = require('passport-local-mongoose');
+require('dotenv').config();
 
-mongoose.connect('mongodb://127.0.0.1:27017/final');
+mongoose.connect(process.env.MONGODB_URL);
 
 const faceSchema = mongoose.Schema({
   name: String,
@@ -26,7 +27,17 @@ const faceSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     default: [],
     ref: "post"
-  }]
+  }],
+  followings: [{
+    type: mongoose.Schema.Types.ObjectId,
+    default: [],
+    ref: "user"
+  }],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    default: [],
+    ref: "user"
+  }],
 })
 
 faceSchema.plugin(plm);

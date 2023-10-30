@@ -14,6 +14,7 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.3",
+    "flowbite": "^2.0.0",
     "googleapis": "^118.0.0",
     "http-errors": "~1.6.3",
     "locomotive-scroll": "^4.1.4",
@@ -29,5 +30,8 @@
     "razorpay": "^2.8.6",
     "socket.io": "^4.6.1",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
   }
 }

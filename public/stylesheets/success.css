@@ -13,10 +13,10 @@ html, body {
 }
 
 #main{
-  width: 88vw;
+  width: 80vw;
   height: 100vh;
   position: absolute;
-  margin-left: 6vw;
+  margin-left: 20vw;
   background-color: #05121B;
 }
 

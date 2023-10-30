@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/index.js');
+var usersRouter = require('./routes/users.js');
 const passport = require('passport');
-const expressSession = require('express-session');
+const session = require('express-session');
 
 
 var app = express();
@@ -16,7 +16,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(expressSession({
+app.use(session({
   resave: false,
   saveUninitialized: false,
   secret: "saenrsn"
@@ -32,18 +32,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(passport.authenticate('session'));
+app.use(passport.authenticate('session'));
 
-// passport.serializeUser(function(user, cb) {
-//   process.nextTick(function() {
-//     cb(null, { id: user.id, name: user.name, email: user.email });
-//   });
-// });
-// passport.deserializeUser(function(user, cb) {
-//   process.nextTick(function() {
-//     return cb(null, user);
-//   });
-// });
+passport.serializeUser(function(user, cb) {  // serializeUser
+  process.nextTick(function() {
+    cb(null, { id: user.id, name: user.name, email: user.email });
+  });
+});
+passport.deserializeUser(function(user, cb) {
+  process.nextTick(function() {
+    return cb(null, user);
+  });
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
